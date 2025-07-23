@@ -1,0 +1,25 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "r2-worker",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-07-23",
+	"compatibility_flags": ["global_fetch_strictly_public"],
+	"assets": {
+		"directory": "./public"
+	},
+	"observability": {
+		"enabled": true
+	},
+	"r2_buckets": [
+		{
+			"binding": "MY_BUCKET",
+			"bucket_name": "testing"
+		}
+	],
+
+	// 【新增此區塊】: 加入環境變數
+	"vars": {
+		"R2_BUCKET_NAME": "testing",
+		"R2_ACCOUNT_ID": "c2f2cdfe9d4dbc18d4547ca9405994c1" // <-- 請務必換成您自己的 Account ID
+	}
+}
